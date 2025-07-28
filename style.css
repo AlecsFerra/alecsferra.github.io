@@ -271,6 +271,7 @@ ol li:before {
 
 li {
   margin: 0;
+  margin-bottom: var(--line-height);
   padding: 0;
 }
 
