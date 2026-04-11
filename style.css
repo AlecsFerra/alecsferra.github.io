@@ -401,6 +401,32 @@ label input {
   border-left: var(--border-thickness) solid var(--text-color);
 }
 
+.inline-links::before {
+  content: "[";
+}
+
+.inline-links::after {
+  content: "]";
+}
+
+.inline-links {
+  display: inline;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inline-links li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.inline-links li:not(:last-child)::after {
+  content: ", ";
+}
+
+
 /* Grid only o desktop */
 @media (min-width: 768px) {
   .grid {
