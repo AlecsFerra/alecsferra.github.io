@@ -1,5 +1,5 @@
 :root {
-  --font-family: "JetBrains Mono";
+  --font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --line-height: 1.20rem;
   --border-thickness: 2px;
   --text-color: #000;
@@ -7,9 +7,9 @@
   --background-color: #fff;
   --background-color-alt: #eee;
 
-  --font-weight-normal: 500;
-  --font-weight-medium: 600;
-  --font-weight-bold: 800;
+  --font-weight-normal: 400;
+  --font-weight-medium: 400;
+  --font-weight-bold: 700;
 
   font-family: var(--font-family);
   font-optical-sizing: auto;
@@ -26,6 +26,22 @@
   --background-color-alt: #111;
 }
 
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/jetbrains-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/jetbrains-mono-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 * {
   box-sizing: border-box;
@@ -111,6 +127,28 @@ a:link, a:visited {
   color: var(--text-color);
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: calc(var(--border-thickness) * 2) solid var(--text-color);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 1000;
+  padding: 0.5rem 0.75rem;
+  background: var(--background-color);
+  color: var(--text-color);
+  border: var(--border-thickness) solid var(--text-color);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 p {
   margin-bottom: var(--line-height);
 }
@@ -184,7 +222,8 @@ p {
 
 img, video {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
