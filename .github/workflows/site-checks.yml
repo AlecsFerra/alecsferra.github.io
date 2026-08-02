@@ -1,0 +1,19 @@
+name: Site checks
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: HTML5 validation 
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: '.'
