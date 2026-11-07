@@ -1,6 +1,8 @@
 :root {
-  --font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  --line-height: 1.20rem;
+  --font-family:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+  --line-height: 1.2rem;
   --border-thickness: 2px;
   --text-color: #000;
   --text-color-alt: #666;
@@ -26,7 +28,6 @@
   --background-color-alt: #111;
 }
 
-
 @font-face {
   font-family: "JetBrains Mono";
   src: url("fonts/jetbrains-mono-400.woff2") format("woff2");
@@ -46,7 +47,6 @@
 * {
   box-sizing: border-box;
 }
-
 
 html {
   display: flex;
@@ -68,7 +68,6 @@ body {
   line-height: var(--line-height);
 }
 
-
 @media screen and (max-width: 480px) {
   :root {
     font-size: 14px;
@@ -78,7 +77,12 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: var(--font-weight-bold);
   margin: calc(var(--line-height) * 2) 0 var(--line-height);
   line-height: var(--line-height);
@@ -123,7 +127,8 @@ a {
   text-decoration-thickness: var(--border-thickness);
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: var(--text-color);
 }
 
@@ -167,7 +172,7 @@ sub {
   vertical-align: sub;
   line-height: 0;
   width: calc(1ch / 0.75);
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 table {
@@ -178,13 +183,12 @@ table {
   margin: 0 0 calc(var(--line-height) * 2);
 }
 
-th, td {
+th,
+td {
   border: var(--border-thickness) solid var(--text-color);
-  padding:
-    calc((var(--line-height) / 2))
+  padding: calc((var(--line-height) / 2))
     calc(1ch - var(--border-thickness) / 2)
-    calc((var(--line-height) / 2) - (var(--border-thickness)))
-  ;
+    calc((var(--line-height) / 2) - (var(--border-thickness)));
   line-height: var(--line-height);
   vertical-align: top;
   text-align: left;
@@ -192,7 +196,6 @@ th, td {
 table tbody tr:first-child > * {
   padding-top: calc((var(--line-height) / 2) - var(--border-thickness));
 }
-
 
 th {
   font-weight: 700;
@@ -220,7 +223,8 @@ p {
   hyphens: auto;
 }
 
-img, video {
+img,
+video {
   display: block;
   max-width: 100%;
   height: auto;
@@ -242,11 +246,11 @@ details[open] summary {
 
 details ::marker {
   display: inline-block;
-  content: '▶';
+  content: "▶";
   margin: 0;
 }
 details[open] ::marker {
-  content: '▼';
+  content: "▼";
 }
 
 details :last-child {
@@ -262,7 +266,8 @@ figure pre {
   margin: 0;
 }
 
-pre, code {
+pre,
+code {
   font-family: var(--font-family);
 }
 
@@ -281,7 +286,8 @@ figcaption {
   margin-top: var(--line-height);
 }
 
-ul, ol {
+ul,
+ol {
   padding: 0;
   margin: 0 0 var(--line-height);
 }
@@ -319,13 +325,14 @@ li::marker {
 }
 
 ::-webkit-scrollbar {
-    height: var(--line-height);
+  height: var(--line-height);
 }
 
-input, button, textarea {
+input,
+button,
+textarea {
   border: var(--border-thickness) solid var(--text-color);
-  padding:
-    calc(var(--line-height) / 2 - var(--border-thickness))
+  padding: calc(var(--line-height) / 2 - var(--border-thickness))
     calc(1ch - var(--border-thickness));
   margin: 0;
   font: inherit;
@@ -341,7 +348,7 @@ input, button, textarea {
   -webkit-appearance: none;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   display: inline-grid;
   place-content: center;
   vertical-align: top;
@@ -349,14 +356,15 @@ input[type=checkbox] {
   height: var(--line-height);
   cursor: pointer;
 }
-input[type=checkbox]:checked:before {
+input[type="checkbox"]:checked:before {
   content: "";
   width: 1ch;
   height: calc(var(--line-height) / 2);
   background: var(--text-color);
 }
 
-button:focus, input:focus {
+button:focus,
+input:focus {
   --border-thickness: 3px;
   outline: none;
 }
@@ -373,7 +381,7 @@ input {
 }
 button::-moz-focus-inner {
   padding: 0;
-  border: 0
+  border: 0;
 }
 
 button {
@@ -403,7 +411,8 @@ label input {
 }
 
 /* Tree list items */
-.tree, .tree ul {
+.tree,
+.tree ul {
   position: relative;
   padding-left: 0;
   list-style-type: none;
@@ -440,19 +449,40 @@ label input {
   border-left: var(--border-thickness) solid var(--text-color);
 }
 
-.inline-links::before {
-  content: "[";
+.publication-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2ch;
 }
 
-.inline-links::after {
-  content: "]";
+.publication-heading strong {
+  flex: 1;
+}
+
+.venue {
+  flex-shrink: 0;
+  margin-left: auto;
+  white-space: nowrap;
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--text-color-alt);
+}
+
+.publication-meta {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.85em;
+  color: var(--text-color-alt);
 }
 
 .inline-links {
-  display: inline;
+  display: block;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0.25rem 0 0;
+  font-size: 0.9em;
+  font-weight: normal;
 }
 
 .inline-links li {
@@ -462,9 +492,8 @@ label input {
 }
 
 .inline-links li:not(:last-child)::after {
-  content: ", ";
+  content: " · ";
 }
-
 
 /* Grid only o desktop */
 @media (min-width: 768px) {
@@ -472,23 +501,54 @@ label input {
     --grid-cells: 0;
     display: flex;
     gap: 2ch;
-    width: calc(round(down, 100%, (1ch * var(--grid-cells)) - (1ch * var(--grid-cells) - 1)));
+    width: calc(
+      round(
+        down,
+        100%,
+        (1ch * var(--grid-cells)) - (1ch * var(--grid-cells) - 1)
+      )
+    );
     margin-bottom: var(--line-height);
   }
 
   .grid > *,
   .grid > input {
-    flex: 0 0 calc(round(down, (100% - (1ch * (var(--grid-cells) - 1))) / var(--grid-cells), 1ch));
+    flex: 0 0
+      calc(
+        round(
+          down,
+          (100% - (1ch * (var(--grid-cells) - 1))) / var(--grid-cells),
+          1ch
+        )
+      );
   }
-  .grid:has(> :last-child:nth-child(1)) { --grid-cells: 1; }
-  .grid:has(> :last-child:nth-child(2)) { --grid-cells: 2; }
-  .grid:has(> :last-child:nth-child(3)) { --grid-cells: 3; }
-  .grid:has(> :last-child:nth-child(4)) { --grid-cells: 4; }
-  .grid:has(> :last-child:nth-child(5)) { --grid-cells: 5; }
-  .grid:has(> :last-child:nth-child(6)) { --grid-cells: 6; }
-  .grid:has(> :last-child:nth-child(7)) { --grid-cells: 7; }
-  .grid:has(> :last-child:nth-child(8)) { --grid-cells: 8; }
-  .grid:has(> :last-child:nth-child(9)) { --grid-cells: 9; }
+  .grid:has(> :last-child:nth-child(1)) {
+    --grid-cells: 1;
+  }
+  .grid:has(> :last-child:nth-child(2)) {
+    --grid-cells: 2;
+  }
+  .grid:has(> :last-child:nth-child(3)) {
+    --grid-cells: 3;
+  }
+  .grid:has(> :last-child:nth-child(4)) {
+    --grid-cells: 4;
+  }
+  .grid:has(> :last-child:nth-child(5)) {
+    --grid-cells: 5;
+  }
+  .grid:has(> :last-child:nth-child(6)) {
+    --grid-cells: 6;
+  }
+  .grid:has(> :last-child:nth-child(7)) {
+    --grid-cells: 7;
+  }
+  .grid:has(> :last-child:nth-child(8)) {
+    --grid-cells: 8;
+  }
+  .grid:has(> :last-child:nth-child(9)) {
+    --grid-cells: 9;
+  }
 }
 
 /* Dark mode toggle */
@@ -512,18 +572,20 @@ label input {
   pointer-events: none;
 
   background-image:
-    repeating-linear-gradient(-5deg,
+    repeating-linear-gradient(
+      -5deg,
       var(--background-color-alt) 0px,
       var(--background-color-alt) 1px,
       rgba(0, 0, 0, 0) 1px,
       rgba(0, 0, 0, 0) 20px
     ),
-    repeating-linear-gradient(95deg,
+    repeating-linear-gradient(
+      95deg,
       var(--background-color-alt) 0px,
       var(--background-color-alt) 1px,
       rgba(0, 0, 0, 0) 1px,
       rgba(0, 0, 0, 0) 20px
-);
+    );
 
   will-change: filter, transform;
   animation:
@@ -532,13 +594,25 @@ label input {
 }
 
 @keyframes pulse-contrast {
-  0%   { filter: brightness(1) contrast(1); }
-  50%  { filter: brightness(1.2) contrast(1.4); }
-  100% { filter: brightness(1) contrast(1); }
+  0% {
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    filter: brightness(1.2) contrast(1.4);
+  }
+  100% {
+    filter: brightness(1) contrast(1);
+  }
 }
 
 @keyframes hue-shift {
-  0%   { filter: hue-rotate(0deg); }
-  50%  { filter: hue-rotate(15deg); }
-  100% { filter: hue-rotate(0deg); }
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(15deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
 }
