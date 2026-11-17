@@ -491,8 +491,16 @@ label input {
   padding: 0;
 }
 
+.inline-links::before {
+  content: "∴ ";
+}
+
+.inline-links::after {
+  content: " ∎";
+}
+
 .inline-links li:not(:last-child)::after {
-  content: " · ";
+  content: " ⨾ ";
 }
 
 /* Grid only o desktop */
